@@ -1,9 +1,11 @@
 import { useState } from 'react'
+import '../assets/styles/productDetail.css';
 import hotel1 from '../assets/images/hotel1.jpeg'
 import hotel2 from '../assets/images/hotel2.jpeg'
 import hotel3 from '../assets/images/hotel3.jpeg'
 import hotel4 from '../assets/images/hotel4.jpeg'
 import hotel5 from '../assets/images/hotel5.jpeg'
+
 
 const arr = [hotel1, hotel2, hotel3, hotel4, hotel5, hotel5];
 
@@ -16,10 +18,10 @@ const ProductDetail = () => {
         setIndexImage(index)
     }
     return (
-        <div className="ProductDetail container flex-row justify-content-center mt-5">
+        <div className="ProductDetail container flex-row justify-content-center mt-2">
             <h1 className="text-center">Villa Phú Quốc</h1>
-            <div className="ImageShow" style={{ width: "90%", height: "50vh", overflow: "hidden", margin: '0 auto' }}>
-                <img style={{ height: "100%", width: "100%", objectFit: "cover" }} src={image} />
+            <div className="ImageShow" style={{ width: "90%", height: "70vh", overflow: "hidden", margin: '0 auto' }}>
+                <img style={{ height: "100%", width: "100%", objectFit: "cover", borderRadius: "1rem" }} src={image} />
             </div>
             <div className="ListImage row mt-4">
                 {
@@ -29,7 +31,7 @@ const ProductDetail = () => {
                             className='col-2'
                             style={indexImage === index ? { cursor: "pointer", opacity: "1" } : { cursor: "pointer", opacity: '0.4' }}
                             onClick={() => handleChangeImage(item, index)}>
-                            <img style={{ width: "100%" }} src={item} />
+                            <img style={{ width: "100%", borderRadius: "1rem" }} src={item} />
                         </div>
                     ))
                 }
